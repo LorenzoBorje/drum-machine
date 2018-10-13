@@ -5,7 +5,7 @@
 body {
     background-color: #333;
     color: #FFF;
-    font-family: 'DIN';
+    font-family: 'DIN', sans-serif;
 }
 
 .hidden {
