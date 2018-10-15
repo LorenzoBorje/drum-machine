@@ -6,7 +6,7 @@ let currentMeasure = 0;
 let currentlyPlaying;
 
 function resetSelected() {
-    $('.row > .pad').removeClass('selected');
+    $('.row > .pad.selected').removeClass('selected');
 }
 
 function handleReset() {
