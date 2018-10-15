@@ -59,7 +59,7 @@ function handleBeatSelection() {
 function generateDrumSequencerGrid() {
     let htmlString = '';
     for (let i = 0; i < instruments.length; i++) {
-         htmlString += `<div class="row instrument ${instruments[i]}">`;
+         htmlString += `<div class="row instrument ${instruments[i]}"><div class="label">${instruments[i]}</div>`;
         for (let j = 0; j < beatMeasure; j++) {
             htmlString += `<button class="pad ${j}" data-key="${instruments[i]}"></button>`;
          }
