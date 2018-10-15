@@ -5,8 +5,17 @@ const instruments = ['kick', 'snare', 'hihat', 'openhat'];
 let currentMeasure = 0;
 let currentlyPlaying;
 
+function resetSelected() {
+    $('.row > .pad').removeClass('selected');
+}
+
+function handleReset() {
+    $('.resetbutton').click(resetSelected);
+}
+
 function playBeat(instrument) {
     console.log(`hit ${instrument}`);
+    // resets currentTime so when other buttons are clicked it can start immediately playing
     $(`audio[data-key='${instrument}']`)[0].currentTime = 0;
     $(`audio[data-key='${instrument}']`)[0].play()
 }
@@ -46,7 +55,6 @@ function handleBeatSelection() {
     $('.pad').on('click', e => {
         $(event.currentTarget).toggleClass('selected');
         let currentInstrument = $(event.currentTarget).attr('data-key');
-        // resets currentTime so when other buttons are clicked it can start immediately playing
         // chaining buttons heightens pitch, odd side-effect
         // better solutions exist (see: StackOverflow) but for first iteration this is fine
         if ($(event.currentTarget).hasClass('selected')) {
@@ -77,6 +85,7 @@ function handleStart() {
     composeSequencer();
     handleBeatSelection();
     handlePlayButton();
+    handleReset();
 }
 
 $(handleStart);
