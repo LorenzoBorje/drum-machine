@@ -69,6 +69,9 @@ function generateDrumSequencerGrid() {
     for (let i = 0; i < instruments.length; i++) {
          htmlString += `<div class="row instrument ${instruments[i]}"><div class="label">${instruments[i]}</div>`;
         for (let j = 0; j < beatMeasure; j++) {
+            if (j % 4 === 0 && j !== 0) {
+                htmlString += '<div class="divider">•</div>';
+            }
             htmlString += `<button class="pad ${j}" data-key="${instruments[i]}"></button>`;
          }
          htmlString += `</div>`

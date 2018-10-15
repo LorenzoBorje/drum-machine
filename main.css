@@ -45,3 +45,10 @@ header > button {
 .selected {
     background-color: #FFF;
 }
+
+.divider {
+    position: relative;
+    top: -4px;
+    left: -4px;
+    display: inline;
+}
